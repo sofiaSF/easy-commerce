@@ -1,0 +1,37 @@
+<form class="form" [formGroup]="productForm">
+    <div class="ui-g-12 ui-md-3 left">
+        <span class="field" ><span class="txt-danger" *ngIf="required('nameControl')">*</span>Nombre:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <input [ngClass]="{'invalid-input': invalidReaction('nameControl')}" formControlName="nameControl"/>
+    </div>
+    <div class="ui-g-12 ui-md-3 left">
+        <span class="field" ><span class="txt-danger" *ngIf="required('priceControl')">*</span>Precio:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <input [ngClass]="{'invalid-input': invalidReaction('priceControl')}" formControlName="priceControl" />
+    </div>
+    <div class="ui-g-12 ui-md-3 left">
+        <span class="field" ><span class="txt-danger" *ngIf="required('quantityControl')">*</span>Cantidad:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <input [ngClass]="{'invalid-input': invalidReaction('quantityControl')}" formControlName="quantityControl" />
+    </div>
+    <div class="ui-g-12 ui-md-3 left">
+        <span class="field" ><span class="txt-danger" *ngIf="required('categoryControl')">*</span>Categoría:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <p-dropdown [ngClass]="{'invalid': invalidReaction('categoryControl')}" [style]="{'width':'150px'}" [options]="categoriesDropdown"  formControlName="categoryControl">  
+        </p-dropdown>
+    </div>
+    <div class="ui-g-12 ui-md-12 center">
+        <div class="field center">Foto:</div>
+        <div class="field center">
+            <img class="image-box shadow" [src]="getControl('imgControl').value">
+        </div>
+        <p-fileUpload #uploadComponent [auto]="true" [customUpload]="true" (uploadHandler)="onUpload($event)" [chooseLabel]="'Adjuntar Foto'" 
+        [showUploadButton]="false" [showCancelButton]="false" accept="image/*"></p-fileUpload> 
+    </div>
+</form>
+
+

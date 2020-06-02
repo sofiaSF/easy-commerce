@@ -1,0 +1,33 @@
+
+<p-dialog [modal]="true" [closable]="true" [(visible)]="display" styleClass="modal-cstm" >
+    <p-header>
+        <ng-container *ngTemplateOutlet="headerTemplate? headerTemplate : header" >
+        </ng-container>
+    </p-header>
+    <ng-container *ngTemplateOutlet="bodyTemplate? bodyTemplate : body" >
+    </ng-container>
+    <p-footer>
+        <ng-container *ngTemplateOutlet="footer" >
+        </ng-container>
+    </p-footer>
+</p-dialog>
+
+
+
+
+<ng-template #header>
+    <span>{{title}}</span>
+</ng-template>
+
+
+<ng-template #body >
+</ng-template>
+
+
+<ng-template #footer >
+    <div class="ui-g-12 ui-md-12">
+        <button class="btn-custom btn-cnt lato" type="button" (click)="onCancel()" >Cancelar</button>
+        <button class="btn-custom btn-banner lato" type="button" (click)="confirm()" [disabled]="disabled">Confirmar</button>
+    </div>
+
+</ng-template>

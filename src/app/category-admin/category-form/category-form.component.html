@@ -1,0 +1,14 @@
+<form class="form" [formGroup]="categoryForm">
+    <div class="ui-g-12 ui-md-5 left">
+        <span class="field"><span class="txt-danger" *ngIf="required('nameControl')">*</span>Categoría:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <input [ngClass]="{'invalid-input': invalidReaction('nameControl')}" formControlName="nameControl" />
+    </div>
+    <div class="ui-g-12 ui-md-5 left">
+        <span class="field" ><span class="txt-danger" *ngIf="required('descriptionControl')">*</span>Descripción:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <input [ngClass]="{'invalid-input': invalidReaction('descriptionControl')}" formControlName="descriptionControl" />
+    </div>
+</form>

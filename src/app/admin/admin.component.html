@@ -1,0 +1,25 @@
+
+<header [buttonTemplate]="button"></header>
+
+<ng-template #button>
+    <button class="btn-header btn-custom" (click)="logOut()">Cerrar Sesión</button>
+</ng-template>
+
+<div class="tab-body">
+    <tabs [items]="items"></tabs>
+</div>
+
+
+
+<ng-template #products>
+    <products-admin></products-admin>
+</ng-template>
+
+
+<ng-template #users>
+    <users-admin></users-admin>
+</ng-template>
+
+<ng-template #category>
+    <category-admin></category-admin>
+</ng-template>

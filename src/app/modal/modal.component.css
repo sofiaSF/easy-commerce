@@ -1,0 +1,17 @@
+.btn-cnt{
+    margin-top: 1em;
+    margin-right: 3em;
+    color: #bbb !important;
+    background-color: #fff !important;
+    border: 1px solid #ddd !important;
+
+}
+
+
+.lato{
+	font-family:  'Lato', sans-serif !important;
+}
+
+.btn-banner:disabled{
+    background-color: grey !important;
+}

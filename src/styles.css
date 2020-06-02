@@ -1,1 +1,287 @@
 /* You can add global styles to this file, and also import other style files */
+/* Header */
+.header-custom{
+	background-color: #000;
+	width: 100%;
+	height: 480px;
+}
+
+
+/* Header-Elements */
+
+
+/* Nav */
+
+/*fixed nav*/
+.header-nav{
+	background-color: #000000;
+	position: fixed;
+	width: 100%;
+	height: 48px;
+	z-index: 9999999;
+	padding: 10px 10%;
+}
+
+/*
+static nav
+.header-nav{
+	background-color: #000000;
+	height: 10%;
+}
+*/
+
+.center-nav{
+	margin-top: 9px;
+	margin-bottom:9px;
+}
+
+.btn-header{
+	background-color: #000000;
+	margin-left: auto;
+}
+
+/* Banner */
+
+.disabled-banner{
+	margin-left: 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:rgba(0,0,0,0.5);
+    z-index: 5;
+    height: 100%;
+    width: 40%;}
+
+.header-banner{
+	width: 100%;
+	background-position-y: 60%;
+	background-size: cover;
+	background-image: url("./assets/cupcake.jpeg");
+	/*static-nav  height: 90%;*/
+	height: 100%;
+	z-index: 3;
+	position: relative;
+	
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+    transition-timing-function: linear;
+}
+
+
+.custom-header-text{
+	font-family: 'Shadows Into Light', cursive;
+	letter-spacing: 0.15em;
+	color: #FFFFFF;
+	font-size: 1.5em;	
+}
+
+.big-font{
+	font-size: 1.5em;
+	text-transform: bold;
+}
+
+.btn-banner{
+	margin-top: 1em;
+	background-color: #FF3386;
+}
+
+.btn-custom{
+	text-align: center;
+	color: #FFFFFF;
+	font-family: 'Shadows Into Light', cursive;
+	border: 1px solid #FFFFFF;
+}
+
+.txt-banner-center{
+	/*static nav padding-top: 61px;*/
+	padding-top: 109px;	
+}
+
+
+/* Body */
+body {
+
+	min-height: 600px;
+	max-height: 1200px;
+
+	
+}
+
+.body-custom{
+	background-color: #FFFFFF;
+	width: 100%;
+
+
+}
+
+.body-text{
+	font-family:  'Lato', sans-serif;
+	font-size: 15px;
+}
+
+.body-title{
+	font-family: 'Shadows Into Light', cursive;
+	letter-spacing: 0.15em;
+	color: #000000;
+	font-size: 2em;
+	text-align: center;
+	
+}
+
+
+.ui-dropdown{
+	min-width: 10px !important;
+}
+
+
+/*elements*/
+
+/* circulos*/
+
+
+.circle{
+	width: 58.60%;
+	height:40.59%;
+	border-radius: 50%;
+	position: relative;
+}
+
+.circle:hover{
+	z-index: 9999 !important;
+	transform: scale(1.2);
+
+	
+}
+
+
+
+
+/* Footer */
+.footer-custom{
+	background-color: #000000;
+	width: 100%;
+	height: 80px;
+
+}
+
+.footer-text,div.footer-text > a{
+	color: rgba(255,255,255,0.4);
+	text-decoration:none !important;
+}
+
+/* General */
+
+
+/* properties */
+
+.margin-l{
+	margin-left: 10%;
+}
+
+.margin-r{
+	margin-right: 10%;
+}
+
+.margin-t{
+	margin-top: 20%;
+}
+
+.padding-t{
+	padding-top: 10%;
+}
+
+.body-align{
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-bottom: 10%;
+}
+
+
+.pad-l-0{
+	padding-left: 0px !important;
+}
+
+.pad-r-0{
+	padding-right: 0px !important;
+}
+
+.contents{
+	display:contents;
+}
+
+.inline-table{
+	display:inline-table;
+}
+
+
+hr.solid {
+	border-bottom: 1.5px solid #ddd;
+}
+
+.txt-danger{
+	color: #f00;
+}
+
+.ui-fileupload-content{
+	width: 100%;
+	height: 100%;
+}
+
+.ui-button{
+	text-decoration: #FF3386;
+	background-color: transparent !important;
+	color: #FF3386 !important;
+	border-color: transparent !important;
+}
+
+.ui-button:focus{
+	border-color: transparent !important;
+}
+
+.ui-fileupload-choose.ui-state-focus{
+	box-shadow: none !important ;
+}
+
+.invalid-input{
+	border: 1px solid #f00 !important;
+}
+ 
+
+div.cart > div > .ui-g > .ui-dataview-emptymessage {
+	background-image: url("./assets/cart-empty.jpg");
+	height: 200px;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+
+div.table > div > .ui-g > .ui-dataview-emptymessage {
+	text-align: center;
+}
+
+div.products.ui-overlaypanel:before{
+	left: 3.5em !important;
+}
+div.products.ui-overlaypanel:after{
+	left: 3.5em !important;
+}
+
+
+
+.invalid > .ui-dropdown{
+	border: 1px solid #f00 !important;
+}
+
+input[type=search]{
+	border: none !important;
+	background-color: transparent;
+	border-bottom: 2px solid  #ddd !important;
+}
+
+input[type=search]:focus{
+	outline: none !important;
+
+}
+

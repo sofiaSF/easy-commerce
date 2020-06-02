@@ -1,0 +1,121 @@
+
+<header [buttonTemplate]="button"></header>
+
+<ng-template #button>
+    <div class="btn-header">
+        <div class="cart-cont">
+            {{(productsService.allSelectedProducts$ | async).length}}
+        </div>
+        <button (click)="goToCart()" class="btn-custom btn-header">
+            <i class="pi pi-shopping-cart"></i>
+        </button>
+    </div>
+</ng-template>
+
+<div class="body-custom body-align padding-t" #body>
+	<p-dataView #table [emptyMessage]="''" [value]="(productsService.products$ | async)" [paginator]="true" [rows]="10"
+    [layout]="'grid'"
+    >
+    <p-header>
+        <input type="search" class="align-center" placeholder="Buscar" (input)="searchElements($event.target.value)">
+        <i class="pi pi-search"></i>
+        <button #button class="filter align-end" (click)="op.toggle($event)"><i class="pi pi-filter min-font"></i></button>
+        <p-overlayPanel [styleClass]="'products'" [appendTo]="table" [baseZIndex]="100" #op>
+            <ng-container *ngTemplateOutlet="filter"></ng-container>
+        </p-overlayPanel>
+    </p-header>
+        <ng-template let-product pTemplate="gridItem">
+            <div class="ui-g-12 ui-md-3">
+                <ng-container *ngTemplateOutlet="grid;context:{product:product}">
+                </ng-container>
+            </div>
+        </ng-template>    
+    </p-dataView>
+</div>
+
+<!-- Grid Mode -->
+<ng-template let-product="product" #grid>
+    <div class="product-box shadow">
+        <div class="img-box">
+            <img  class="product-image" src="{{product?.image}}">
+           <!--  <div class="product-disabled">
+                <div class="body-title">
+                    {{product.name}}
+                </div>
+            </div>  -->
+        </div>
+        <div class="body-title cart-text min-space">
+            {{product.name}}
+        </div>
+        <div class="body-title cart-text">
+            $ {{product.price}}
+            <div class="btn-container">
+                <div class="font-size-min min-space">
+                    Cantidad:
+                </div>
+                <div class="font-size-min min-space">
+                    <p-dropdown [style]="{'width':'70px'}" [options]="unities"  [(ngModel)]="product.quantity"
+                    ></p-dropdown>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button class="btn-custom btn-cart cart-text font-size-min" (click)="addSelectedProduct(product)">
+                    <i class="pi pi-shopping-cart"></i>
+                    Agregar</button>
+            </div>
+        </div>   
+    </div>
+</ng-template> 
+
+
+<ng-template #searchAndFilter> 
+    <input type="search" placeholder="Buscar" (input)="searchElements($event.target.value)">
+</ng-template> 
+
+
+<ng-template #filter> 
+    <div class="filter-box"> 
+        <div class="ui-g-12 ui-md-12">
+            Ordenar por
+        </div>
+        <div class="ui-g-12 ui-md-3 left">
+            <span>Nombre:</span>
+        </div>
+        <div class="ui-g-12 ui-md-7 left">
+            <a href="#" pTooltip="ascendente" [tooltipZIndex]="2000" [tooltipPosition]="'top'"><i #alfAsc class="pi pi-sort-alpha-up-alt cstm-icon"></i></a>
+            
+            <a href="#" pTooltip="descendente" [tooltipZIndex]="2000" [tooltipPosition]="'top'" ><i #alfDes class="pi pi-sort-alpha-down-alt cstm-icon"></i></a>
+        </div>
+        <div class="ui-g-12 ui-md-3 left">
+            <span>Precio:</span>
+        </div>
+        <div class="ui-g-12 ui-md-7 left">
+            <a href="#" pTooltip="ascendente" [tooltipZIndex]="2000" [tooltipPosition]="'top'"><i #montoAsc class="pi pi-sort-amount-up cstm-icon"></i></a>
+            <a href="#" pTooltip="descendente" [tooltipZIndex]="2000" [tooltipPosition]="'top'" ><i #montoDes class="pi pi-sort-amount-down cstm-icon"></i></a>
+        </div>
+     
+        <div class="filter-container"> 
+            <div class="ui-g-12 ui-md-12">
+                <hr class="solid">
+                Filtrar por
+            </div>
+            <div class="ui-g-12 ui-md-2 left">
+                <span>Precio:</span>
+            </div>
+            <div class="ui-g-12 ui-md-2 left">
+                <p-inputSwitch [(ngModel)]="priceChecked"></p-inputSwitch>
+            </div>
+            <div *ngIf="priceChecked">
+                <div class="ui-g-12 ui-md-3 left">
+                    <input placeholder="desde" [style]="{'width': '-webkit-fill-available'}" type="text">  
+                </div>
+                <div class="ui-g-12 ui-md-1 center-text">
+                    <span>-</span>  
+                </div>
+                 <div class="ui-g-12 ui-md-3 left">
+                    <input placeholder="hasta" [style]="{'width': '-webkit-fill-available'}" type="text">
+                </div>
+            </div>
+        </div>
+    </div> 
+</ng-template>     

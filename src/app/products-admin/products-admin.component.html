@@ -1,0 +1,71 @@
+<div class="body-custom body-align padding-t" #body>
+    <h1 class="body-title left">Administración de Productos</h1>
+    <p-dataView [styleClass]="'table'" [emptyMessage]="'No existen productos'" [value]="(productsService.products$ | async)" [paginator]="true" [rows]="10"
+    [layout]="'list'"
+    >
+        <ng-template let-product pTemplate="listItem">
+            <ng-container *ngTemplateOutlet="list;context:{product:product}">
+            </ng-container>
+        </ng-template>    
+    </p-dataView>
+    <div class="ui-g-12 ui-md-12 end">
+        <button (click)="openModal()" class="btn-custom btn-banner">Crear Producto</button>
+    </div>
+</div>
+
+<ng-template let-product="product" #list>
+    <div class="product-row shadow">
+        <div class="ui-g-12 ui-md-2">
+            <img  class="product-image shadow" src="{{product?.image}}">
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Nombre
+            <div class="center-text">
+                {{product.name}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-1 align-text">
+            Precio
+            <div class="center-text">
+                $ {{product.price}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Cantidad
+            <div class="center-text">
+                {{product.quantity}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Categoría
+            <div class="center-text">
+                {{product?.category?.name}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-1 align-text">
+            <br>
+            <div class="center-text">
+                <a href="#" class="center-text cstm-link" (click)="editProduct(product)" >
+                    Editar
+                </a>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            <br>
+            <div class="center-text">
+                <a href="#" class="center-text cstm-link" (click)="eliminateProduct(product)" >
+                    Eliminar
+                </a>
+            </div>
+        </div>   
+    </div>
+</ng-template> 
+
+<modal (onClose)="resetForm()"
+[bodyTemplate]="product" (onConfirm)="onConfirm()" 
+[title]="title" [(display)]="showModalValue"></modal>
+
+     
+<ng-template #product>
+    <product-form (closeModal)="close()"></product-form> 
+</ng-template> 

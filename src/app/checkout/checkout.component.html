@@ -1,0 +1,101 @@
+
+<header [buttonTemplate]="button"></header>
+
+<ng-template #button>
+    <div class="btn-header">
+        <button (click)="eliminateCart()" class="btn-custom btn-header">
+            <div>
+                <i class="pi pi-shopping-cart"></i>
+                <span>
+                    Vaciar Carrito
+                </span>
+            </div>
+        </button>   
+    </div>
+</ng-template>
+
+<div class="element-box">
+    <div class="ui-g-12 ui-md-8 photo">
+        <div class="body-custom body-align padding-t" #body>
+            <h1 class="body-title">Mi carrito</h1>
+            <p-dataView [styleClass]="'cart'" [emptyMessage]="''" [value]="(productsService.selectedProducts$ | async)" [paginator]="true" [rows]="10"
+            [layout]="'list'"
+            >
+                <ng-template let-product pTemplate="listItem">
+                    <ng-container *ngTemplateOutlet="list;context:{product:product}">
+                    </ng-container>
+                </ng-template>    
+            </p-dataView>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-4 align-text">
+        <ng-container *ngTemplateOutlet="shopPanel">
+        </ng-container>
+    </div>
+</div>
+
+
+
+
+    
+<!-- List Mode -->
+<ng-template let-product="product" #list>
+    <div class="product-row shadow">
+        <div class="ui-g-12 ui-md-2">
+            <img  class="product-image shadow" src="{{product?.image}}">
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            <br>
+            <div class="center-text">
+                {{product.name}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Precio
+            <div class="center-text">
+                $ {{product.price}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Cantidad
+            <div class="center-text">
+                <p-dropdown [style]="{'width':'70px'}" [options]="unities" [(ngModel)]="product.quantity"></p-dropdown>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Subtotal
+            <div class="center-text">
+                $ {{product.price * product.quantity}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            <br>
+            <div class="center-text">
+                <a href="#" class="center-text cstm-link" (click)="eliminateProduct(product)" >
+                    Eliminar
+                </a>
+            </div>
+        </div>   
+    </div>
+</ng-template> 
+
+<ng-template #shopPanel>
+    <div class="shop-box shadow align-text">
+        <div class="ui-g-12 ui-md-12 align-text">
+            RESUMEN DE COMPRA
+            <hr class="solid">
+        </div> 
+        <div class="ui-g-12 ui-md-6 align-text">
+            Total
+        </div> 
+        <div class="ui-g-12 ui-md-6 align-text">
+            $ {{ calculateTotal(productsService.selectedProducts$ | async)}}
+        </div> 
+        <div class="ui-g-12 ui-md-12">
+            <hr class="solid">
+            <button  class="btn-custom btn-cnt" (click)="continueShopping()">Seguir Comprando</button>
+            <button  class="btn-custom btn-banner">Comprar</button>
+        </div>    
+    </div>   
+
+</ng-template> 

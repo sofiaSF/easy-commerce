@@ -1,0 +1,32 @@
+<div [formGroup]="loginForm" class="login-box shadow align-text">
+    <div class="content-box">
+        <div class="ui-g-12 ui-md-12 align-text text-danger" *ngIf="errorMessage">
+            Nombre de usuario y/o contraseña incorrectos.
+        </div>
+        <div class="ui-g-12 ui-md-12 title">
+            Iniciar Sesión
+        </div> 
+        <div class="ui-g-12 ui-md-12 align-text">
+            <div class="login-label">
+                Usuario:
+            </div>
+            <div class="input">
+                <input formControlName="userControl" [style]="{'width': '-webkit-fill-available'}" type="text">  
+            </div> 
+        </div> 
+        <div class="ui-g-12 ui-md-12 align-text">
+            <div class="login-label">
+                Contraseña:
+            </div>
+            <div class="input">
+                <input formControlName="passwordControl" [style]="{'width': '-webkit-fill-available'}" type="password">  
+            </div>
+        </div> 
+        <div class="ui-g-12 ui-md-12">
+            <button (click)="login()" class="btn-custom btn-banner btn-login">Iniciar Sesión</button>
+        </div>
+<!--         <div class="ui-g-12 ui-md-12">
+            <span>¿Todavía no tienes cuenta? <a href="#" >Regístrate</a></span>
+        </div>    -->    
+    </div>        
+</div>   

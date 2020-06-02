@@ -1,0 +1,95 @@
+<!-- Header -->
+<div class="header-custom" #header>
+                
+    <header></header>
+
+    <div class="header-banner shadow" id="banner"#banner>
+    
+        <div class="disabled-banner">
+    
+            <div class="margin-l txt-banner-center" #bannerText> 
+            
+                <div class="custom-header-text" #text></div>
+                <button class="btn-custom btn-banner" (click)="click()">Ordenar Ahora</button>
+                
+            </div>
+        </div>
+            
+    </div>
+    
+</div>
+
+<div class="body-custom body-align" #body>
+		
+    <div class="container padding-t" #imgSection>
+    
+        <div class="row " >
+        
+            <div class="col-6 pad-l-0">
+                <p class="body-text">
+                Sed elementum tempus egestas sed sed risus pretium quam vulputate. 
+                Auctor elit sed vulputate mi sit amet. Nunc lobortis mattis aliquam 
+                faucibus purus. Ultrices vitae auctor eu augue ut lectus arcu bibendum.
+                Magnis dis parturient montes nascetur ridiculus mus mauris vitae. Libero 
+                nunc consequat interdum varius. Venenatis lectus magna fringilla urna porttitor
+                rhoncus dolor. Feugiat in fermentum posuere urna nec tincidunt. 
+                <br>
+                <br>
+                Urna nec tincidunt 
+                praesent semper feugiat nibh sed pulvinar proin. Elit at imperdiet dui accumsan sit 
+                amet nulla facilisi. Elit duis tristique sollicitudin nibh. Viverra justo nec ultrices 
+                dui sapien eget. Elementum nisi quis eleifend quam adipiscing vitae proin. 
+                <br>
+                <br>
+                Consequat id
+                porta nibh venenatis. Egestas pretium aenean pharetra magna ac placerat vestibulum. 
+                Tortor consequat id porta nibh. Erat nam at lectus urna duis convallis. Gravida arcu ac tortor dignissim convallis aenean. Ullamcorper velit sed ullamcorper morbi tincidunt.
+            </div>
+            <div class="col-6 pad-r-0 pad-l-0 inline-table">
+                <img height="100%" width="100%" src="../../assets/cupcake-large.jpeg" />			
+            </div>			
+        </div>
+        <div class="row " >
+            <div class="col-6 pad-l-0 pad-r-0 inline-table">
+                <img height="100%" width="100%" src="../../assets/cupcakes-pink-h.jpeg" />
+            </div>
+            <div class="col-6 pad-l-0">
+                <p class="body-text margin-l padding-t">
+                Sed elementum tempus egestas sed sed risus pretium quam vulputate.
+                Auctor elit sed vulputate mi sit amet. Nunc lobortis mattis aliquam 
+                faucibus purus. Ultrices vitae auctor eu augue ut lectus arcu bibendum. 
+                Magnis dis parturient montes nascetur ridiculus mus mauris vitae. Libero 
+                nunc consequat interdum varius. Venenatis lectus magna fringilla urna 
+                porttitor rhoncus dolor. Feugiat in fermentum posuere urna nec tincidunt. 
+                Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Elit at 
+                imperdiet dui accumsan sit amet nulla facilisi. Elit duis tristique sollicitudin 
+                nibh. Viverra justo nec ultrices dui sapien eget. Elementum nisi quis eleifend 
+                quam adipiscing vitae proin. Consequat id porta nibh venenatis. Egestas pretium 
+                aenean pharetra magna ac placerat vestibulum. Tortor consequat id porta nibh.
+                Erat nam at lectus urna duis convallis. Gravida arcu ac tortor dignissim convallis
+                aenean. Ullamcorper velit sed ullamcorper morbi tincidunt.
+                </p>
+            </div>
+        </div>
+        
+        <h2 class="body-title margin-t">Probá Nuestros Nuevos Sabores!<h2>
+        <div class="row padding-t" >
+        
+            <!-- Componente De Círculos -->
+            
+            <div class="col-6">
+                    
+                <a (mouseover)="setImage($event)"><div id="first-circle" class="circle shadow" style="background-image: url('../../assets/cupcakes-pink-h.jpeg'); z-index: 3;margin-bottom: -10%;"></div></a>
+                <a (mouseover)="setImage($event)"><div class="circle shadow" style="background-image: url('../../assets/cupcake-large.jpeg'); z-index: 2;margin-bottom: -10%; margin-left:10%"></div></a>
+                <a (mouseover)="setImage($event)"><div class="circle shadow" style="background-image: url('../../assets/cupcakes-pink-h.jpeg'); z-index: 1;"></div></a>
+        
+            
+            </div>
+            
+            <div class="col-6 pad-l-0 pad-r-0 inline-table">
+                <img id="imgCanvas" height="100%" width="100%" />
+            </div>
+            
+        </div>
+	
+

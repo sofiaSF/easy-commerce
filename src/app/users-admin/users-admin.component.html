@@ -1,0 +1,71 @@
+<div class="body-custom body-align padding-t" #body>
+    <h1 class="body-title left">Administración de Usuarios</h1>
+    <p-dataView [styleClass]="'table'"  [emptyMessage]="'No existen usuarios'" [value]="(loginService.users$ | async)" [paginator]="true" [rows]="10"
+    [layout]="'list'"
+    >
+        <ng-template let-user pTemplate="listItem">
+            <ng-container *ngTemplateOutlet="list;context:{user:user}">
+            </ng-container>
+        </ng-template>    
+    </p-dataView>
+    <div class="ui-g-12 ui-md-12 end">
+        <button class="btn-custom btn-banner" (click)="openUserModal()">Crear Usuario</button>
+    </div>
+</div>
+
+<ng-template let-user="user" #list>
+    <div class="product-row shadow">
+        <div class="ui-g-12 ui-md-2">
+            <img  class="product-image shadow" src="../../assets/user.png">
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Usuario
+            <div class="center-text">
+                {{user.username}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            Correo
+            <div class="center-text">
+                {{user.email}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-3 align-text">
+            <span>
+                Fecha Autenticación
+            </span>
+            <div class="center-text">
+                {{user.creationDate.toLocaleString()}}
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-1 align-text">
+            <br>
+            <div class="center-text">
+                <a href="#" class="center-text cstm-link" (click)="editUser(user)" >
+                    Editar
+                </a>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2 align-text">
+            <br>
+            <div class="center-text">
+                <a href="#" class="center-text cstm-link" (click)="eliminateUser(user)" >
+                    Eliminar
+                </a>
+            </div>
+        </div>     
+    </div>
+</ng-template> 
+
+<modal (onClose)="resetForm()"
+[bodyTemplate]="user" (onConfirm)="onConfirm()" 
+[title]="title" [(display)]="showModalValue"></modal>
+
+     
+<ng-template #user>
+    <user-form (closeModal)="close()"></user-form> 
+</ng-template> 
+
+
+
+

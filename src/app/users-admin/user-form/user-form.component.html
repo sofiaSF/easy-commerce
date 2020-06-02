@@ -1,0 +1,35 @@
+<form class="form" [formGroup]="registerForm">
+    <div class="ui-g-12 ui-md-5 left">
+        <span class="field"><span class="txt-danger" *ngIf="required('nameControl')">*</span>Usuario:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <input  [ngClass]="{'invalid-input': invalidReaction('nameControl')}"
+        formControlName="nameControl" />
+    </div>
+    <div class="ui-g-12 ui-md-5 left">
+        <span class="field" >
+            <span class="txt-danger" *ngIf="required('passControl')">*</span>
+            Contraseña:</span>
+    </div>
+    <div class="ui-g-12 ui-md-6 left">
+        <input [ngClass]="{'invalid-input': invalidReaction('passControl')}"
+        maxLength="15" type="password" formControlName="passControl" #passInput/>
+        <div class="txt-danger"  *ngIf="invalidForm && getControl('passControl').hasError('passwordError')">
+            {{getControl('passControl').getError('passwordError')}}
+        </div> 
+    </div>
+    <div class="ui-g-12 ui-md-1 left">
+        <span class="icon"><i class="pi pi-eye" (click)="toggleType($event,passInput)"  ></i></span>
+    </div>
+    <div class="ui-g-12 ui-md-5 left">
+        <span class="field" ><span class="txt-danger" *ngIf="required('emailControl')">*</span>
+        Correo Electrónico:</span>
+    </div>
+    <div class="ui-g-12 ui-md-7 left">
+        <input [ngClass]="{'invalid-input': invalidReaction('emailControl')}"
+        formControlName="emailControl" />
+        <div class="txt-danger"  *ngIf="invalidForm && getControl('emailControl').hasError('emailError')">
+            {{getControl('emailControl').getError('emailError')}}
+        </div> 
+    </div>
+</form>
