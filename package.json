@@ -11,9 +11,7 @@
     "dev:ssr": "ng run confiteria:serve-ssr",
     "serve:ssr": "node dist/confiteria/server/main.js",
     "build:ssr": "ng build --prod && ng run confiteria:server:production",
-    "prerender": "ng run confiteria:prerender",
-    "start:heroku": "node dist/server",
-    "postinstall": "npm run build:ssr"
+    "prerender": "ng run confiteria:prerender"
   },
   "private": true,
   "dependencies": {
