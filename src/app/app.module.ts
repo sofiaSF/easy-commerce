@@ -56,7 +56,7 @@ import { AuthGuard } from './services/auth-guard';
     CategoryAdminComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     DataViewModule,
     DropdownModule,
