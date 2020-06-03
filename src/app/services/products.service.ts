@@ -23,8 +23,10 @@ export class ProductsService {
   allSelectedProducts: any[];
   id= 0;
 
-  port = "4000"
-  baseUrl = "http://localhost:" + this.port + "/api/";
+  port = "4000";
+  local = "http://localhost:" + this.port;
+  prod = "https://easy-commerce-api.herokuapp.com";
+  baseUrl =  this.prod + "/api/";
 
   constructor(private http: HttpClient) { 
     this.selectedProductsSubject = new BehaviorSubject<any>([]);
