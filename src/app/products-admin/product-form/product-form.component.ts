@@ -43,11 +43,12 @@ export class ProductFormComponent implements OnInit {
  
 
   ngOnInit(): void {
+    this.categoryService.chargeCategories();
+    this.chargeCategories();
     this.buildForm();
     this.onResetForm();
     this.onConfirmForm();
     this.onChargeData();
-    this.chargeCategories();
   }
 
   createDropdown(list){
@@ -64,7 +65,7 @@ export class ProductFormComponent implements OnInit {
 
 
   chargeCategories(){
-    this.categoryService.getCategories()
+    this.categoryService.category$
     .pipe(takeUntil(this.ngUnsubscribe))
     .subscribe(res => {
       if(res){
