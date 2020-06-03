@@ -52,7 +52,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   createDropdown(list){
-    this.categories = [...list];
+    this.categories = [];
     list.map(elem => {
       let drop={
         label: elem.name,
