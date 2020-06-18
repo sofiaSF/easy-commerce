@@ -6,16 +6,17 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { CheckinComponent } from './checkin/checkin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ProductsAdminComponent } from './products-admin/products-admin.component';
-import { UsersAdminComponent } from './users-admin/users-admin.component';
 import { AuthGuard } from './services/auth-guard';
 
+
 const routes: Routes = [
-{path:"",component: HomePageComponent},
-{path:"admin",component:  AdminComponent,canActivate:[AuthGuard]},
-{path:"checkout",component:  CheckoutComponent},
-{path:"products",component:  CheckinComponent},
-{path:"login",component:  LoginComponent}
+{path:"",loadChildren: () => import('./home-page/homepage.module').then(m => m.HomepageModule)},
+{path:"admin",loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
+{path:"checkout",loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule)},
+{path:"products",loadChildren: () => import('./checkin/product.module').then(m => m.ProductModule)}, 
+{path:"login",loadChildren: () => import('./login/login.module').then(m => m.LoginModule)},
+{ path: "", redirectTo: "", pathMatch: "full" }
+
 ];
 
 @NgModule({
