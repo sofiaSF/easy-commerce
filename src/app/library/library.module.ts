@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TabViewModule } from 'primeng/tabview/tabview';
-import { DialogModule } from 'primeng/dialog/dialog';
 import { TabComponent } from './tab/tab.component';
 import { ModalComponent } from './modal/modal.component';
 import { HeaderComponent } from './header/header.component';
+import { PrimengModule } from '../primeng/primeng.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   declarations: [HeaderComponent,ModalComponent, TabComponent],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
-    TabViewModule,
-    DialogModule,
+    PrimengModule
   ],
   providers: [],
   exports:[ModalComponent,TabComponent,HeaderComponent]

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CheckinComponent } from './checkin.component';
+import { SharedServicesModule } from '../services/shared-services.module';
 
 
 const routes: Routes = [
@@ -12,3 +13,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ProductRoutingModule { }
+
+

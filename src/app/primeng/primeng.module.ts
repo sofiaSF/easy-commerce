@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-import { DataViewModule } from 'primeng/dataview/dataview';
-import { DropdownModule } from 'primeng/dropdown/dropdown';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TabViewModule } from 'primeng/tabview/tabview';
-import { DialogModule } from 'primeng/dialog/dialog';
-import { FileUploadModule } from 'primeng/fileupload/fileupload';
-import { OverlayPanelModule } from 'primeng/overlaypanel/public_api';
-import { InputSwitchModule } from 'primeng/inputswitch/public_api';
-import { TooltipModule } from 'primeng/tooltip/tooltip';
+import { DataViewModule } from 'primeng/dataview';
+import { DropdownModule } from 'primeng/dropdown';
+import { TabViewModule } from 'primeng/tabview';
+import { DialogModule } from 'primeng/dialog';
+import { FileUploadModule } from 'primeng/fileupload';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { TooltipModule } from 'primeng/tooltip';
 
 
 
@@ -16,7 +15,6 @@ import { TooltipModule } from 'primeng/tooltip/tooltip';
   imports: [
     DataViewModule,
     DropdownModule,
-    BrowserAnimationsModule,
     TabViewModule,
     DialogModule,
     FileUploadModule,
@@ -27,7 +25,6 @@ import { TooltipModule } from 'primeng/tooltip/tooltip';
   exports : [
     DataViewModule,
     DropdownModule,
-    BrowserAnimationsModule,
     TabViewModule,
     DialogModule,
     FileUploadModule,

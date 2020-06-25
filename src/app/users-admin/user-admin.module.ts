@@ -5,22 +5,20 @@ import { FormService } from '../services/form.service';
 import { LoginService } from '../services/login-service.service';
 import { LibraryModule } from '../library/library.module';
 import { ValidationService } from '../services/validation.service';
-import { ServiceModule } from '../services/service.module';
-import { DataViewModule } from 'primeng/dataview/dataview';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrimengModule } from '../primeng/primeng.module';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [UserFormComponent,UsersAdminComponent],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
     CommonModule,
-    DataViewModule,
-    ServiceModule,
+    ReactiveFormsModule,
+    PrimengModule,
     LibraryModule
   ],
-  providers:[LoginService,FormService,ValidationService],
+  providers:[],
   exports:[UserFormComponent,UsersAdminComponent]
 })
 export class UserAdminModule { }

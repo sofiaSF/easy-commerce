@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CheckoutComponent } from './checkout.component';
 import { LibraryModule } from '../library/library.module';
-import { ServiceModule } from '../services/service.module';
 import { ProductsService } from '../services/products.service';
-import { DataViewModule } from 'primeng/dataview/dataview';
-import { DropdownModule } from 'primeng/dropdown/dropdown';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { PrimengModule } from '../primeng/primeng.module';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CheckoutRoutingModule } from './checkout-routing.module';
+import { SharedServicesModule } from '../services/shared-services.module';
 
 
 @NgModule({
   declarations: [CheckoutComponent],
   imports: [
     CommonModule,
+    PrimengModule,
     FormsModule,
     ReactiveFormsModule,
-    DataViewModule,
-    DropdownModule,
     LibraryModule,
-    ServiceModule
+    CheckoutRoutingModule
   ],
-  providers: [ProductsService],
+  providers: [],
   exports: [CheckoutComponent]
 })
 export class CheckoutModule { }

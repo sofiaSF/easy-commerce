@@ -53,8 +53,8 @@ export class AdminComponent implements OnInit,AfterViewInit,AfterViewChecked {
     if(user?.admin){
       items.push({header:'Adm de Usuarios',template:this.users});
     }
-/*     items.push({header:'Adm de Categorías',template:this.category});
-    items.push({header:'Adm de Productos',template:this.products}); */
+    items.push({header:'Adm de Categorías',template:this.category});
+    items.push({header:'Adm de Productos',template:this.products}); 
     return items;
   }
 
