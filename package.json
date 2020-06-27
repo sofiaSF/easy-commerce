@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/platform-server": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "@angular/service-worker": "~9.0.2",
     "@nguniversal/express-engine": "^9.0.2",
     "express": "^4.17.1",
     "primeicons": "^3.0.0-rc.1",
@@ -41,7 +42,6 @@
     "@types/node": "^12.11.1"
   },
   "devDependencies": {
-
     "@angular-devkit/build-angular": "~0.900.3",
     "@angular/language-service": "~9.0.2",
     "@types/jasmine": "~3.5.0",
